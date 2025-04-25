@@ -3,8 +3,19 @@
 // Import du layout
 import MainLayout from "../layouts/MainLayout.astro";
 
+const isRed = false;
 ---
 
 <MainLayout title="About" description="Ma page About">
-	<slot><p>Hello From la page About</p></slot>
+	<slot><p>Hello From la page <span class:list={["big", {red: isRed} ]}>About</span></p></slot>
 </MainLayout>
+
+<!-- Style CSS -->
+<style>
+	.big {
+		font-size: 4rem;
+	}
+	.red {
+		color: red;
+	}
+</style>
