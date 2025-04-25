@@ -1,0 +1,22 @@
+---
+
+// Import du Head principal présent dans toute l'appli
+import MainHead from './MainHead.astro';
+
+const { 
+	title = "My Super App", 
+	description = "Welcome to My Super App" 
+} = Astro.props;
+---
+
+<html lang="fr">
+	<MainHead {title} {description}/>
+	<body>
+        <slot>
+			<p>Texte par défaut</p>
+		</slot>
+		<slot name="intro">
+			<p>Bonjour, je m'appelle Steeve, enchanté de vous connaître</p>
+		</slot>
+	</body>
+</html>
