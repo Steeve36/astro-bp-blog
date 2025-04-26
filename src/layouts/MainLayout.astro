@@ -1,34 +1,29 @@
 ---
-
 // Import components
-import MainHead from './MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import MainHead from "./MainHead.astro";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
 
 // Import style
-import "../styles/global.css"
+import "../styles/global.css";
 
-const { 
-	title = "My Super App", 
-	description = "Welcome to My Super App" 
-} = Astro.props;
+const { title = "My Super App", description = "Welcome to My Super App" } =
+  Astro.props;
 ---
 
 <html lang="fr">
-	<MainHead {title} {description}/>
-	<body>
-		<Nav/>
-        <slot>
-			<p>Texte par défaut</p>
+  <MainHead {title} {description} />
+  <body>
+    <Nav />
+    <main>
+		<slot>
+		<p>Texte par défaut</p>
 		</slot>
-		<!-- <slot name="intro">
-			<p>Bonjour, je m'appelle Steeve, enchanté de vous connaître</p>
-		</slot> -->
-
-		<Footer/>
-	</body>
+    </main>
+    <Footer />
+  </body>
 </html>
 
 <script>
-	 import "../js/nav.js";
+  import "../js/nav.js";
 </script>

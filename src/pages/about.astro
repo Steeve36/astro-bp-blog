@@ -1,21 +1,27 @@
 ---
-
 // Import du layout
+import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 
 const isRed = false;
 ---
 
 <MainLayout title="About" description="Ma page About">
-	<slot><p>Hello From la page <span class:list={["big", {red: isRed} ]}>About</span></p></slot>
+  <section class="container about" aria-label="About Me">
+    <img
+		src="/images/headshot.jpg"
+		alt="My headshot"
+		width="200"
+		height="330"
+    />
+	<div class="content">
+		<h1 class="h1">My Blog</h1>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur officia sint non nulla ad vitae, magni est quia repellat sit, rem laudantium laboriosam! Doloremque obcaecati voluptatum laborum blanditiis et illo.
+		</p>
+		<Link href="mailto:mon-email@gmail.com" style="primary" text="Contact Me"></Link>
+	</div>
+  </section>
 </MainLayout>
 
 <!-- Style CSS -->
-<style>
-	.big {
-		font-size: 4rem;
-	}
-	.red {
-		color: red;
-	}
-</style>
