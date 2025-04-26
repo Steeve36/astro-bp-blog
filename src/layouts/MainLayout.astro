@@ -1,9 +1,11 @@
 ---
 
-// Import du Head principal présent dans toute l'appli
+// Import components
 import MainHead from './MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
 
-// Import du style général
+// Import style
 import "../styles/global.css"
 
 const { 
@@ -15,11 +17,18 @@ const {
 <html lang="fr">
 	<MainHead {title} {description}/>
 	<body>
+		<Nav/>
         <slot>
 			<p>Texte par défaut</p>
 		</slot>
-		<slot name="intro">
+		<!-- <slot name="intro">
 			<p>Bonjour, je m'appelle Steeve, enchanté de vous connaître</p>
-		</slot>
+		</slot> -->
+
+		<Footer/>
 	</body>
 </html>
+
+<script>
+	 import "../js/nav.js";
+</script>
